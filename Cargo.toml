@@ -1,0 +1,19 @@
+[package]
+name = "towergate"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = { version = "0.14", default-features = false, features = [
+    "bevy_winit",          # Window management
+    "bevy_render",         # Core rendering pipeline
+    "bevy_core_pipeline",  # 2D/3D camera pipelines
+    "bevy_sprite",         # 2D Sprites & Shapes
+    "bevy_text",           # Terminal text rendering
+    "bevy_ui",             # Interface elements
+    "multi-threaded"       # ECS parallel execution
+] }
+
+# Enable high optimizations for dependencies, even in dev mode (makes Bevy run fast)
+[profile.dev.package."*"]
+opt-level = 3
