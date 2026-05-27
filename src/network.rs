@@ -29,9 +29,9 @@ pub fn spawn_initial_subnet(mut commands: Commands) {
                         is_compromised: false,
         },
         Name::new("Gateway Router"),
-    ))
+    ));
 
-    // Spawn Firewall Node
+    // Spawn Workstation Node
     commands.spawn((
         NetworkNode {
             ip_address: "10.0.4.23".to_string(),
