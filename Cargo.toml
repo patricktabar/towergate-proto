@@ -1,7 +1,10 @@
 [package]
 name = "towergate"
+description = "A simple 2D game built with Bevy, showcasing a tower defense style gameplay."
 version = "0.1.0"
 edition = "2024"
+author = "Patrick Tabarelli <patrick.tabarelli@gmail.com>"
+license = "MIT"
 
 [dependencies]
 bevy = { version = "0.18.1", default-features = false, features = [
