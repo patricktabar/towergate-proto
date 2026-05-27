@@ -4,14 +4,18 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy = { version = "0.14", default-features = false, features = [
+bevy = { version = "0.18.1", default-features = false, features = [
+    "std",                 # Standard library support (required by bevy_ecs for events/systems)
     "bevy_winit",          # Window management
     "bevy_render",         # Core rendering pipeline
     "bevy_core_pipeline",  # 2D/3D camera pipelines
     "bevy_sprite",         # 2D Sprites & Shapes
     "bevy_text",           # Terminal text rendering
     "bevy_ui",             # Interface elements
-    "multi-threaded"       # ECS parallel execution
+    "bevy_state",          # State management (States, init_state, in_state)
+    "keyboard",            # Keyboard input support (ButtonInput<KeyCode>)
+    "multi_threaded",      # ECS parallel execution
+    "x11",                 # X11 windowing backend (required by winit on Linux)
 ] }
 
 # Enable high optimizations for dependencies, even in dev mode (makes Bevy run fast)

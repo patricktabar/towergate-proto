@@ -14,7 +14,7 @@ pub struct NetworkPlugin;
 impl Plugin for NetworkPlugin {
     fn build(&self, app: &mut App) {
         // Startup systems run exactly once when the plugin loads
-        app.add_system(Startup, spawn_initial_subnet);
+        app.add_systems(Startup, spawn_initial_subnet);
     }
 }
 

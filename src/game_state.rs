@@ -1,9 +1,11 @@
 use bevy::prelude::*;
+use bevy::state::app::StatesPlugin;
 
 /// The current phase of the game, which determines
 /// what systems are active and how the player
 /// can interact with the game world.
-#[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
+#[allow(dead_code)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq, Hash, Default, States)]
 pub enum GamePhase {
     #[default]
     NetworkMapping, // Scanning the architecture
@@ -12,6 +14,7 @@ pub enum GamePhase {
 }
 
 /// Represents the player's current resources and status in the game.
+#[allow(dead_code)]
 #[derive(Resource, Debug, Clone)]
 pub struct CyberResources {
     pub total_cpu_cycles: u32,
@@ -33,7 +36,8 @@ pub struct StatePlugin;
 
 impl Plugin for StatePlugin {
     fn build(&self, app: &mut App) {
-        app.init_state::<GamePhase>()
+        app.add_plugins(StatesPlugin)
+            .init_state::<GamePhase>()
             .insert_resource(CyberResources::default());
     }
 }
